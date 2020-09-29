@@ -61,13 +61,6 @@ io.on("connection", (socket) => {
 
         socket.join(project_id)        
     })
-
-    // socket.on("saveProject1", async ({project})=>{
-    //     console.log(project)
-    //     // let response=await save_project(project)
-    //     // console.log(response)
-    //     // socket.to(project._id).emit("save_response",response)
-    // })
   
     socket.on("saveProject", async (project)=>{
         // console.log(project);
