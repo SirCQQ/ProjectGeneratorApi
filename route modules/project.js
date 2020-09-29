@@ -5,11 +5,9 @@ const { verify, decode } = require("../model/validation/verify");
 const { projectValidator } = require('../model/validation/validation')
 const User =require('../model/User')
 const {get_all_projects,get_user_project_by_id,save_project} =require("./functions/project_fnctions");
-const {Project_Generator} = require('../generator/CGenerator');
 const CGenerator = require('../generator/CGenerator');
 var zip = require('express-easy-zip');
 const path=require("path");
-const fs = require('fs');
 router.use(zip())
 let project_files={};
 
@@ -136,11 +134,6 @@ router.get("/get_project/:project_name",(req,res)=>{
         path:path.join(__dirname,`../projects/${project_name}`),
         name:`${project_name}`
     }]})
-    // fs.rmdir(path.join(__dirname,`../projects/${project_name}`),{ recursive: true },err=>{
-    //     if (err)console.log(err)
-    // })
-    // res.zip({files:paths,filename:project_name+".zip"})
-    // res.download(`./projects/${project_name}.zip`)
 })
 
 
