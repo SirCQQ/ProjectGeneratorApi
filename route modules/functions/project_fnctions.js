@@ -37,7 +37,7 @@ let get_user_project_by_id = async (user_id, project_id)=>{
 
 let save_project=async (project_req)=>{
         let nameTaken = false
-        // console.log(project_req)
+        // 
         // let { error } = projectValidator(project);
         // if (error) socket.emit("save_response", json({ error: error.details[0].message })
         let project = await ProjectSchema.find({ project_owner: project_req.project_owner })

@@ -1,5 +1,6 @@
 const jwt=require('jsonwebtoken');
 function auth (req,res,next){
+    // console.log(res.headers)
     const token = req.header('auth-token');
     if(!token) return res.status(401).json({
         status:"fail",

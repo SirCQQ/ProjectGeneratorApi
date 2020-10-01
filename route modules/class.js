@@ -3,7 +3,6 @@ let router = express.Router();
 const { ClassSchema } = require("../model/Class");
 const { verify, decode } = require("../model/validation/verify");
 const { classValidation } = require('../model/validation/validation')
-
 router.get('/', verify, async (req, res) => {
     const token = req.header('auth-token');
     let user_id = decode(token);

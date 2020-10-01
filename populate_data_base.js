@@ -38,7 +38,7 @@ async function toDatabase(struct) {
     try {
         const savedStructure = await struct.save();
         // res.json({struct:savedStructure})
-        // console.log(savedStructure)
+        // 
         console.log("Create success")
     }
     //Catching any errors
@@ -308,7 +308,7 @@ async function find_users(){
     
     // let users=["5ece6971f8affb26b8010a9e","5ece882050d340457081f039"]
     // let resp= await User.find({_id:users})
-    // console.log(resp);
+    // 
 
     let user_id="5ece882050d340457081f039"
     let response =await ProjectSchema.find({"project_colabs.user_id":user_id})

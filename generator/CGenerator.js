@@ -233,7 +233,7 @@ struct ${struct.struct_name}{
             else
                 file = generat_c_file(file_def);
                 
-                console.log("File starts: "+file.replace(/((\s)|(\n))/,'')+"Files end !")
+                // console.log("File starts: "+file.replace(/((\s)|(\n))/,'')+"Files end !")
                 if (file.trim()!==""){
             fs.writeFile(`${file_path}/src/${file_def.file_name}.${file_def.file_type}`, file, (err => {
                 if (err) {
@@ -274,8 +274,8 @@ struct ${struct.struct_name}{
                         {file = generat_cpp_file(file_def);}
                     else
                       {  file = generat_c_file(file_def);}
-                        console.log("file",file);
-                        console.log(file.replace(/\s|\n/,''))
+                        // console.log("file",file);
+                        // console.log(file.replace(/\s|\n/,''))
                     if (file.trim()!==""){
                     fs.writeFile(`${file_path}/src/${file_def.file_name}.${file_def.file_type}`, file, (err => {
                         if (err) {
@@ -307,7 +307,7 @@ struct ${struct.struct_name}{
         let files = fs.readdirSync(`./projects/${project_name}/src`);
         for (let i = 0; i < files.length; i++) {
             let file_info= fs.readFileSync(`./projects/${project_name}/src/${files[i]}`)
-            console.log("File info", file_info)
+            // 
             zip.file(`${project_name}/src/${files[i]}`,file_info);
         }
         zip

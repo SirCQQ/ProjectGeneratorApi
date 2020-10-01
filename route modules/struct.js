@@ -16,7 +16,7 @@ router.get('/', verify, async (req, res) => {
 
 
 router.post('/', verify, async (req, res) => {
-    console.log(req.body)
+    // 
     const token = req.header('auth-token');
     let user_id = decode(token);
     let { error } = structValidation(req.body);
@@ -81,7 +81,7 @@ router.get("/:struct_id", verify, (req, res) => {
     let { struct_id } = { ...req.params }
     StructSchema.findById(struct_id, (err, response) => {
         if (err || response === null) return res.json({ status: "fail", error: err })
-        console.log(response)
+        
         return res.json({
             status: "success",
             struct: response
